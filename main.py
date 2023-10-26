@@ -34,7 +34,7 @@ def login_system():
             print("Invalid username or password. Please try again.")
 
 # Main inventory management system
-def inventory_management(user_id, user_type)
+def inventory_management(user_id, user_type):
     if user_type == "admin":
         print("You are logged in as an admin.")
         # Add admin-specific functionality here
