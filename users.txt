@@ -1,0 +1,4 @@
+user_id,username,password,user_type
+1,admin,adminpassword,admin
+2,staff1,staff1password,staff
+3,staff2,staff2password,staff
