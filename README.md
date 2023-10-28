@@ -1,9 +1,9 @@
-### PYTHON-IMS
+# PYTHON-IMS
 
 
-# To-Do List
+## To-Do List
 
-## User Management System
+### User Management System
 - [x] Create a User Management System.
 - [x] Users of the program need to have a valid User ID and Password.
 - [x] Store all user details in the `users.txt` file.
@@ -11,7 +11,7 @@
 - [x] Implement validation for User ID and Password.
 - [x] Admins should have the ability to create, modify, and search for users.
 
-## Initial Inventory Creation
+### Initial Inventory Creation
 - [ ] Create an Initial Inventory System.
 - [ ] Store all item details in the `ppe.txt` file.
 - [ ] Item details should include Item Code, Supplier Code, and Quantity in stock (measured in the number of boxes).
@@ -25,19 +25,19 @@
 - [ ] Allow a maximum of four suppliers.
 - [ ] Create a `suppliers.txt` file for storing and updating supplier details.
 
-## Searching Functionalities
+### Searching Functionalities
 - [ ] Implement search and print functionalities.
 - [ ] Allow users to search for details of item distribution for any particular item.
 - [ ] Allow users to search for details of items received from any particular supplier.
 - [ ] Create options to filter and display results.
 
-## Hospital and Supplier Creation
-### Supplier Data
+### Hospital and Supplier Creation
+#### Supplier Data
 - [ ] Initialize Supplier Data.
 - [ ] Write supplier data to a text file.
 - [ ] Implement editing capabilities for the `supplier.txt` file.
 
-### Hospital Data
+#### Hospital Data
 - [ ] Initialize Hospital Data.
 - [ ] Write hospital data to a text file.
 
