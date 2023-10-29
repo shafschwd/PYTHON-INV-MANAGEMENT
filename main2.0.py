@@ -2,7 +2,6 @@ def create_hospital():
     # Input hospital details
     hospital_code = input("Enter Hospital Code: ")
     hospital_name = input("Enter Hospital Name: ")
-    # You can include other relevant details here
 
     # Check if the hospital code is unique
     if not is_hospital_code_unique(hospital_code):
@@ -35,7 +34,6 @@ def create_supplier():
     # Input supplier details
     supplier_code = input("Enter Supplier Code: ")
     supplier_name = input("Enter Supplier Name: ")
-    # You can include other relevant details here
 
     # Check if the supplier code is unique
     if not is_supplier_code_unique(supplier_code):
@@ -116,7 +114,7 @@ def distribute_items_to_hospital():
 
     print("Items distributed and inventory updated successfully!")
 
-
+# function to check if the supplier code is valid
 def is_supplier_code_valid(supplier_code):
     try:
         with open("suppliers.txt", "r") as suppliers_file:
@@ -128,7 +126,7 @@ def is_supplier_code_valid(supplier_code):
         print("File not found: suppliers.txt")
     return False
 
-
+# Function to check if a hospital code is valid
 def is_hospital_code_valid(hospital_code):
     try:
         with open("hospitals.txt", "r") as hospitals_file:
@@ -140,7 +138,7 @@ def is_hospital_code_valid(hospital_code):
         print("File not found: hospitals.txt")
     return False
 
-
+# Function to check if an item code is valid
 def is_item_code_valid(item_code):
     try:
         with open("ppe.txt", "r") as ppe_file:
@@ -152,7 +150,7 @@ def is_item_code_valid(item_code):
         print("File not found: ppe.txt")
     return False
 
-
+# Function to check if there is sufficient quantity of an item in stock
 def is_quantity_sufficient(item_code, quantity_distributed):
     try:
         with open("ppe.txt", "r") as ppe_file:
@@ -165,7 +163,7 @@ def is_quantity_sufficient(item_code, quantity_distributed):
         print("File not found: ppe.txt")
     return False
 
-
+# Function to update the inventory with a change in quantity
 def update_inventory(item_code, quantity_change):
     # Update the inventory in ppe.txt with the new quantity
     updated_lines = []
@@ -177,22 +175,21 @@ def update_inventory(item_code, quantity_change):
             updated_lines.append(f"{code},{supplier_code},{quantity_in_stock}\n")
 
     with open("ppe.txt", "w") as ppe_file:
-        ppe_file.writelines(updated_lines)
+        ppe_file.writelines(updated_lines
 
-
+# Function to record a transaction
 def record_transaction(item_code, target_code, quantity, transaction_type):
     # Record the transaction in transactions.txt
     transaction_details = f"{item_code},{target_code},{quantity},{transaction_type},{get_current_datetime()}\n"
     with open("transactions.txt", "a") as transactions_file:
         transactions_file.write(transaction_details)
 
-
+# Function to get the current date and time in a specific format
 def get_current_datetime():
-    # Get the current date and time in a specific format
     import datetime
     return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-
+# Function to track the total quantity of all items sorted by item code
 def track_total_quantity_sorted_by_item_code():
     items = []
 
@@ -211,7 +208,7 @@ def track_total_quantity_sorted_by_item_code():
     for item in items:
         print(f"Item Code: {item[0]}, Quantity: {item[1]}")
 
-
+# Function to track items with low quantities
 def track_low_quantity_items(threshold=25):
     try:
         with open("ppe.txt", "r") as ppe_file:
@@ -226,7 +223,7 @@ def track_low_quantity_items(threshold=25):
     except FileNotFoundError:
         print("File not found: ppe.txt")
 
-
+# Function to track the quantity of a specific item
 def track_quantity_for_item():
     item_code = input("Enter the item code you want to track: ")
 
@@ -242,21 +239,8 @@ def track_quantity_for_item():
                     print(f"Skipping invalid line: {line}")
     except FileNotFoundError:
         print("File not found: ppe.txt")
-    print(f"Item with code {item_code} not found.")
+    print(f"Item with code {item_code}
 
-
-def track_items_received_in_period():
-    start_date = input("Enter the start date (YYYY-MM-DD): ")
-    end_date = input("Enter the end date (YYYY-MM-DD): ")
-
-    with open("transactions.txt", "r") as transactions_file:
-        for line in transactions_file:
-            item_code, _, quantity, transaction_type, date_time = line.strip().split(',')
-            if (
-                transaction_type == "Received" and
-                start_date <= date_time <= end_date
-            ):
-                print(f"Item Code: {item_code}, Quantity: {quantity}, Date-Time: {date_time}")
 
 
 # main logic
