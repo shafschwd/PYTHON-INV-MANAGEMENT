@@ -24,3 +24,32 @@ while True:
         break
     else:
         print("Invalid choice. Please select a valid option.")
+
+
+
+
+def item_inventory_tracking_menu():
+    while True:
+        print("\nItem Inventory Tracking Menu:")
+        print("1. Total Available Quantity of All Items (Sorted by Item Code)")
+        print("2. Records of Items with Stock Quantity Less Than 25 Boxes")
+        print("3. Track Available Quantity for a Particular Item")
+        print("4. Track Items Received During a Specific Time Period")
+        print("5. Back to Main Menu")
+
+        choice = input("Enter your choice (1/2/3/4/5): ")
+
+        if choice == "1":
+            track_total_quantity_sorted_by_item_code()
+        elif choice == "2":
+            track_low_quantity_items()
+        elif choice == "3":
+            track_quantity_for_item()
+        elif choice == "4":
+            track_items_received_in_period()
+        elif choice == "5":
+            print("Returning to the Main Menu.")
+            break
+        else:
+            print("Invalid choice. Please select a valid option for Item Inventory Tracking.")
+
