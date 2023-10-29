@@ -12,18 +12,18 @@
 - [x] Admins should have the ability to create, modify, and search for users.
 
 ### Initial Inventory Creation
-- [ ] Create an Initial Inventory System.
-- [ ] Store all item details in the `ppe.txt` file.
-- [ ] Item details should include Item Code, Supplier Code, and Quantity in stock (measured in the number of boxes).
-- [ ] PPE items should be received, recorded, and distributed in boxes.
-- [ ] Each item is supplied by exactly one supplier.
-- [ ] One supplier can supply more than one type of item.
-- [ ] Implement validation for Supplier Codes.
-- [ ] Ensure there are a minimum of three hospitals.
-- [ ] Store hospital details in the `hospitals.txt` file.
+- [x] Create an Initial Inventory System.
+- [x] Store all item details in the `ppe.txt` file.
+- [x] Item details should include Item Code, Supplier Code, and Quantity in stock (measured in the number of boxes).
+- [x] PPE items should be received, recorded, and distributed in boxes.
+- [x] Each item is supplied by exactly one supplier.
+- [x] One supplier can supply more than one type of item.
+- [x] Implement validation for Supplier Codes.
+- [x] Ensure there are a minimum of three hospitals.
+- [x] Store hospital details in the `hospitals.txt` file.
 - [ ] Inventory creation is a one-time process initialized at the start of the program.
-- [ ] Allow a maximum of four suppliers.
-- [ ] Create a `suppliers.txt` file for storing and updating supplier details.
+- [x] Allow a maximum of four suppliers.
+- [x] Create a `suppliers.txt` file for storing and updating supplier details.
 
 ### Searching Functionalities
 - [ ] Implement search and print functionalities.
@@ -33,19 +33,19 @@
 
 ### Hospital and Supplier Creation
 #### Supplier Data
-- [ ] Initialize Supplier Data.
-- [ ] Write supplier data to a text file.
-- [ ] Implement editing capabilities for the `supplier.txt` file.
+- [x]] Initialize Supplier Data.
+- [x] Write supplier data to a text file.
+- [x] Implement editing capabilities for the `supplier.txt` file.
 
 #### Hospital Data
-- [ ] Initialize Hospital Data.
-- [ ] Write hospital data to a text file.
+- [x] Initialize Hospital Data.
+- [x] Write hospital data to a text file.
 
 ## Item Inventory Management
-- [ ] Implement Item Inventory Management.
-- [ ] Include item inventory tracking.
-- [ ] Display available quantity of items stored in ascending order by Item Code.
-- [ ] Maintain records of all items with a stock quantity of less than 25 boxes.
-- [ ] Allow tracking of the available quantity of a particular item.
-- [ ] Implement tracking of items received during a certain period (startDate to endDate).
+- [x] Implement Item Inventory Management.
+- [x] Include item inventory tracking.
+- [x] Display available quantity of items stored in ascending order by Item Code.
+- [x] Maintain records of all items with a stock quantity of less than 25 boxes.
+- [x] Allow tracking of the available quantity of a particular item.
+- [x] Implement tracking of items received during a certain period (startDate to endDate).
 

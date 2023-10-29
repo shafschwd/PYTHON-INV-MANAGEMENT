@@ -175,7 +175,7 @@ def update_inventory(item_code, quantity_change):
             updated_lines.append(f"{code},{supplier_code},{quantity_in_stock}\n")
 
     with open("ppe.txt", "w") as ppe_file:
-        ppe_file.writelines(updated_lines
+        ppe_file.writelines(updated_lines)
 
 # Function to record a transaction
 def record_transaction(item_code, target_code, quantity, transaction_type):
@@ -239,7 +239,7 @@ def track_quantity_for_item():
                     print(f"Skipping invalid line: {line}")
     except FileNotFoundError:
         print("File not found: ppe.txt")
-    print(f"Item with code {item_code}
+    print(f"Item with code {item_code}")
 
 
 
@@ -250,5 +250,5 @@ def track_quantity_for_item():
 # create_supplier()
 # track_total_quantity_sorted_by_item_code()
 # track_low_quantity_items()
-# track_quantity_for_item()
-track_items_received_in_period()
+track_quantity_for_item()
+# track_items_received_in_period()
