@@ -447,10 +447,132 @@ def display_users():
             print(f"User ID: {user_id}, Username: {username}, User Type: {user_type}")
 
 
-'''# User management system
+#function for item inventory tracking menu
+def item_inventory_tracking_menu():
+    while True:
+        print("\nItem Inventory Tracking Menu:")
+        print("1. Total Available Quantity of All Items (Sorted by Item Code)")
+        print("2. Records of Items with Stock Quantity Less Than 25 Boxes")
+        print("3. Track Available Quantity for a Particular Item")
+        print("4. Track Items Received During a Specific Time Period")
+        print("5. Back to Main Menu")
+
+        choice = input("Enter your choice (1/2/3/4/5): ")
+
+        if choice == "1":
+            track_total_quantity_sorted_by_item_code()
+        elif choice == "2":
+            track_low_quantity_items()
+        elif choice == "3":
+            track_quantity_for_item()
+        elif choice == "4":
+            track_items_received_in_period()
+        elif choice == "5":
+            print("Returning to the Main Menu.")
+            break
+        else:
+            print("Invalid choice. Please select a valid option for Item Inventory Tracking.")
+
+
+# Function for the search functionalities menu
+def search_functionalities_menu():
+    while True:
+        print("\nSearch Functionalities Menu:")
+        print("1. Search Hospitals")
+        print("2. Search Suppliers")
+        print("3. Back to Main Menu")
+
+        choice = input("Enter your choice (1/2/3): ")
+
+        if choice == "1":
+            search_hospitals()
+        elif choice == "2":
+            search_suppliers()
+        elif choice == "3":
+            print("Returning to the Main Menu.")
+            break
+        else:
+            print("Invalid choice. Please select a valid option for search functionalities.")
+
+
+# Function to search for hospitals
+def search_hospitals():
+    hospital_code = input("Enter the Hospital Code to search: ")
+
+    try:
+        with open("hospitals.txt", "r") as hospitals_file:
+            for line in hospitals_file:
+                parts = line.strip().split(',')
+                if len(parts) >= 2 and parts[0] == hospital_code:
+                    print(f"Hospital Code: {parts[0]}, Hospital Name: {parts[1]}")
+                    return
+
+        print(f"Hospital with code {hospital_code} not found.")
+    except FileNotFoundError:
+        print("File not found: hospitals.txt")
+
+
+# Function to search for suppliers
+def search_suppliers():
+    supplier_code = input("Enter the Supplier Code to search: ")
+
+    try:
+        with open("suppliers.txt", "r") as suppliers_file:
+            for line in suppliers_file:
+                parts = line.strip().split(',')
+                if len(parts) >= 2 and parts[0] == supplier_code:
+                    print(f"Supplier Code: {parts[0]}, Supplier Name: {parts[1]}")
+                    return
+
+        print(f"Supplier with code {supplier_code} not found.")
+    except FileNotFoundError:
+        print("File not found: suppliers.txt")
+
+# Function for a simple login
+
+def simple_login():
+    while True:
+        print("\nLogin Menu")
+        username = input("Enter your username: ")
+        password = input("Enter your password: ")
+        user_data = read_user_data()  # Read user data from the file
+        if username in user_data:
+            user_info = user_data[username]
+            if user_info['password'] == password:
+                print(f"Welcome, {username} ({user_info['user_type']})!")
+                return user_info
+        print("Invalid username or password. Please try again.")
+
+
+#Main Program
+user_data = None
+
 if __name__ == "__main__":
     user_data = read_user_data()
-    login(user_data)'''
-#distribute_items_to_hospital()
-receive_items_from_supplier()
+    simple_login()
+while True:
+    print("\nMain Menu:")
+    print("1. Receive Items from Supplier")
+    print("2. Distribute Items to Hospitals")
+    print("3. Item Inventory Tracking")
+    print("4. Search Functionalities")
+    print("5. User Management")
+    print("6. Exit")
 
+    choice = input("Enter your choice (1/2/3/4/5/6): ")
+
+    if choice == "1":
+        receive_items_from_supplier()
+    elif choice == "2":
+        distribute_items_to_hospital()
+    elif choice == "3":
+        item_inventory_tracking_menu()
+    elif choice == "4":
+        search_functionalities_menu()
+    elif choice == "5":
+        login(user_data)
+    elif choice == "6":
+        print("Exiting the program. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please select a valid option.")
