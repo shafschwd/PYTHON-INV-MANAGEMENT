@@ -1,0 +1,26 @@
+while True:
+    print("\nMain Menu:")
+    print("1. Receive Items from Supplier")
+    print("2. Distribute Items to Hospitals")
+    print("3. Item Inventory Tracking")
+    print("4. Search Functionalities")
+    print("5. User Management")
+    print("6. Exit")
+
+    choice = input("Enter your choice (1/2/3/4/5/6): ")
+
+    if choice == "1":
+        receive_items_from_supplier()
+    elif choice == "2":
+        distribute_items_to_hospitals()
+    elif choice == "3":
+        item_inventory_tracking_menu()
+    elif choice == "4":
+        search_functionalities_menu()
+    elif choice == "5":
+        user_management_menu()
+    elif choice == "6":
+        print("Exiting the program. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please select a valid option.")
