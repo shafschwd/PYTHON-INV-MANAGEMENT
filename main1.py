@@ -101,6 +101,78 @@ def display_users():
             user_id, username, _, user_type = line.strip().split(',')
             print(f"User ID: {user_id}, Username: {username}, User Type: {user_type}")
 
+# Function for user login
+def login(user_data):
+    while True:
+        print("\nLogin System")
+        username = input("Enter your username: ")
+        password = input("Enter your password: ")
+
+        user = authenticate_user(user_data, username, password)
+        if user:
+            print(f"Welcome, {username} ({user['user_type']})!")
+
+            if user['user_type'] == 'admin':
+                admin_menu(user_data)
+            else:
+                staff_menu(user_data)
+
+            user_continue = input("Do you want to continue (Y/N)? ").strip().lower()
+            if user_continue != 'y':
+                break
+        else:
+            print("Invalid username or password. Please try again.")
+
+# Function for admin menu
+def admin_menu(user_data):
+    while True:
+        print("\nUser Management Menu:")
+        print("1. Create User")
+        print("2. Modify User")
+        print("3. Search User")
+        print("4. Delete User")
+        print("5. Display All Users")
+        print("6. Back to Main Menu")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            create_user(user_data)
+        elif choice == "2":
+            modify_user(user_data)
+        elif choice == "3":
+            search_user(user_data)
+        elif choice == "4":
+            username = input("Enter the username to delete: ")
+            delete_user(user_data, username)
+        elif choice == "5":
+            display_users()
+        elif choice == "6":
+            print("Returning to the main menu.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+# Function for staff menu
+def staff_menu(user_data):
+    while True:
+        print("\nStaff Menu:")
+        print("1. Search User")
+        print("2. Display All Users")
+        print("3. Logout")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            search_user(user_data)
+        elif choice == "2":
+            display_users()
+        elif choice == "3":
+            write_user_data(user_data)
+            print("Logged out.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 # User management system
 if __name__ == "__main__":
@@ -115,52 +187,10 @@ if __name__ == "__main__":
         if user:
             print(f"Welcome, {username} ({user['user_type']})!")
 
-            while True:  # This inner loop is for the admin or staff menu
-                if user['user_type'] == 'admin':
-                    print("\nAdmin Menu:")
-                    print("1. Create User")
-                    print("2. Modify User")
-                    print("3. Search User")
-                    print("4. Delete Users")
-                    print("5. Display All Users")
-                    print("6. Logout")
-                else:
-                    print("\nStaff Menu:")
-                    print("1. Search User")
-                    print("2. Display All Users")
-                    print("3. Logout")
-
-                choice = input("Enter your choice: ")
-
-                if user['user_type'] == 'admin':
-                    if choice == "1":
-                        create_user(user_data)
-                    elif choice == "2":
-                        modify_user(user_data)
-                    elif choice == "3":
-                        search_user(user_data)
-                    elif choice == "4":
-                        username = input("Enter the username to delete: ")
-                        delete_user(user_data, username)
-                    elif choice == "5":
-                        display_users()
-                    elif choice == "6":
-                        write_user_data(user_data)
-                        print("Logged out.")
-                        break
-                    else:
-                        print("Invalid choice. Please try again.")
-                else:
-                    if choice == "1":
-                        search_user(user_data)
-                    elif choice == "2":
-                        display_users()
-                    elif choice == "3":
-                        write_user_data(user_data)
-                        print("Logged out.")
-                        break
-                    else:
-                        print("Invalid choice. Please try again.")
+            if user['user_type'] == 'admin':
+                admin_menu(user_data)
+            else:
+                staff_menu(user_data)
 
             user_continue = input("Do you want to continue (Y/N)? ").strip().lower()
             if user_continue != 'y':

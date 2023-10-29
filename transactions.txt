@@ -3,3 +3,5 @@ MS,sup1,23,Received,2023-10-29 16:44:03
 MS,hos3,25,Distributed,2023-10-29 16:48:02
 MS,sup1,22,Received,2023-10-29 17:08:02
 MS,hos1,22,Distributed,2023-10-29 17:08:26
+HC,hos1,2,Distributed,2023-10-29 22:39:45
+HC,sup1,2,Received,2023-10-29 22:40:57

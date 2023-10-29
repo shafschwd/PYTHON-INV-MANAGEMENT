@@ -1,6 +1,6 @@
-"HC", "sup1", "100"
-"FS", "sup1", "100"
-"MS", "sup2", "100"
-"GL", "sup2", "100"
-"GW", "sup3", "100"
-"SC", "sup3", "100"
+HC, sup1,100
+FS, sup1, 100
+MS, sup2, 100
+GL, sup2, 100
+GW, sup3, 100
+SC, sup3, 100

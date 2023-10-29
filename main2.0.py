@@ -250,5 +250,5 @@ def track_quantity_for_item():
 # create_supplier()
 # track_total_quantity_sorted_by_item_code()
 # track_low_quantity_items()
-track_quantity_for_item()
+# track_quantity_for_item()
 # track_items_received_in_period()
