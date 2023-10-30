@@ -544,7 +544,7 @@ def simple_login():
         print("Invalid username or password. Please try again.")
 
 
-#Function to generate users.txt file if if it does not exist
+#Function to generate users.txt file if it does not exist
 def generate_initial_user_data():
     try:
         with open("users.txt", "r") as file:
@@ -559,15 +559,79 @@ def generate_initial_user_data():
             print("Initial user data created in users.txt")
 
 
+# Function to generate hospital.txt file if it does not exist
+def generate_initial_hospital_data():
+    try:
+        with open("hospital.txt", "r") as file:
+            # If the file already exists, do nothing
+            pass
+    except FileNotFoundError:
+        # If the file doesn't exist, create it with some initial hospital data
+        with open("hospital.txt", "w") as file:
+            # Add initial hospital data
+            file.write("hos1,sunway\n")
+            file.write("hos2,putra\n")
+            file.write("hos3,klmc\n")
+            print("Initial hospital data created in hospital.txt")
 
 
-#Main Program
+# Function to generate ppe.txt file if it does not exist
+def generate_initial_ppe_data():
+    try:
+        with open("ppe.txt", "r") as file:
+            # If the file already exists, do nothing
+            pass
+    except FileNotFoundError:
+        # If the file doesn't exist, create it with some initial ppe data
+        with open("ppe.txt", "w") as file:
+            # Add initial ppe data
+            file.write("HC, sup1,100\n")
+            file.write("FS, sup1, 100\n")
+            file.write("MS, sup2, 100\n")
+            file.write("GL, sup2, 100\n")
+            file.write("GW, sup3, 100\n")
+            print("Initial ppe data created in ppe.txt")
+
+
+# Function to generate suppliers.txt file if it does not exist
+def generate_initial_suppliers_data():
+    try:
+        with open("suppliers.txt", "r") as file:
+            # If the file already exists, do nothing
+            pass
+    except FileNotFoundError:
+        # If the file doesn't exist, create it with some initial suppliers data
+        with open("suppliers.txt", "w") as file:
+            # Add initial suppliers data
+            file.write("sup1, nestle\n")
+            file.write("sup2, pfizer\n")
+            file.write("sup3, runway\n")
+            print("Initial suppliers data created in suppliers.txt")
+
+
+# Function to generate transactions.txt file if it does not exist
+def generate_initial_transactions_data():
+    try:
+        with open("transactions.txt", "r") as file:
+            # If the file already exists, do nothing
+            pass
+    except FileNotFoundError:
+        # If the file doesn't exist, create it with some initial transactions data
+        with open("transactions.txt", "w") as file:
+            print("Initial transactions data created in transactions.txt")
+
+
+# Main Program
 user_data = None
 
 if __name__ == "__main__":
     generate_initial_user_data()
     user_data = read_user_data()
     simple_login()
+    generate_initial_ppe_data()
+    generate_initial_hospital_data()
+    generate_initial_suppliers_data()
+    generate_initial_transactions_data()
 while True:
     print("\nMain Menu:")
     print("1. Receive Items from Supplier")
