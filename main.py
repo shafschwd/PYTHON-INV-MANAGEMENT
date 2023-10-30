@@ -559,20 +559,20 @@ def generate_initial_user_data():
             print("Initial user data created in users.txt")
 
 
-# Function to generate hospital.txt file if it does not exist
-def generate_initial_hospital_data():
+# Function to generate hospitals.txt file if it does not exist
+def generate_initial_hospitals_data():
     try:
-        with open("hospital.txt", "r") as file:
+        with open("hospitals.txt", "r") as file:
             # If the file already exists, do nothing
             pass
     except FileNotFoundError:
-        # If the file doesn't exist, create it with some initial hospital data
-        with open("hospital.txt", "w") as file:
-            # Add initial hospital data
+        # If the file doesn't exist, create it with some initial hospitals data
+        with open("hospitals.txt", "w") as file:
+            # Add initial hospitals data
             file.write("hos1,sunway\n")
             file.write("hos2,putra\n")
             file.write("hos3,klmc\n")
-            print("Initial hospital data created in hospital.txt")
+            print("Initial hospitals data created in hospitals.txt")
 
 
 # Function to generate ppe.txt file if it does not exist
@@ -629,7 +629,7 @@ if __name__ == "__main__":
     user_data = read_user_data()
     simple_login()
     generate_initial_ppe_data()
-    generate_initial_hospital_data()
+    generate_initial_hospitals_data()
     generate_initial_suppliers_data()
     generate_initial_transactions_data()
 while True:
