@@ -1,4 +1,4 @@
-HC, sup1,100
+HC, sup1,169
 FS, sup1, 100
 MS, sup2, 100
 GL, sup2, 100

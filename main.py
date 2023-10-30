@@ -544,10 +544,28 @@ def simple_login():
         print("Invalid username or password. Please try again.")
 
 
+#Function to generate users.txt file if if it does not exist
+def generate_initial_user_data():
+    try:
+        with open("users.txt", "r") as file:
+            # If the file already exists, do nothing
+            pass
+    except FileNotFoundError:
+        # If the file doesn't exist, create it with some initial user data
+        with open("users.txt", "w") as file:
+            # Add initial user data
+            file.write("1,admin,1234,admin\n")
+            file.write("2,staff,1234,staff\n")
+            print("Initial user data created in users.txt")
+
+
+
+
 #Main Program
 user_data = None
 
 if __name__ == "__main__":
+    generate_initial_user_data()
     user_data = read_user_data()
     simple_login()
 while True:
