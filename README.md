@@ -33,7 +33,7 @@
 
 ### Hospital and Supplier Creation
 #### Supplier Data
-- [x]] Initialize Supplier Data.
+- [x] Initialize Supplier Data.
 - [x] Write supplier data to a text file.
 - [x] Implement editing capabilities for the `supplier.txt` file.
 
