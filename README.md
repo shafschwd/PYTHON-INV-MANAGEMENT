@@ -21,7 +21,7 @@
 - [x] Implement validation for Supplier Codes.
 - [x] Ensure there are a minimum of three hospitals.
 - [x] Store hospital details in the `hospitals.txt` file.
-- [ ] Inventory creation is a one-time process initialized at the start of the program.
+- [x] Inventory creation is a one-time process initialized at the start of the program.
 - [x] Allow a maximum of four suppliers.
 - [x] Create a `suppliers.txt` file for storing and updating supplier details.
 
